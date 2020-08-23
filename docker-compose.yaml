@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+        service1:
+                build: service1/.
+                image: microservices_service1
+                restart: always
+                deploy:
+                        mode: replicated
+                        replicas: 5
+                volumes:
+                        - ./service1:/app
+                ports:
+                        - "8000:80"
+                depends_on:
+                        - service2
+        service2:
+                image: microservices_service2
+                restart: always
+                deploy:
+                        mode: replicated
+                        replicas: 5
+                build: service2/.
+                volumes:
+                        - ./service2:/app
+
