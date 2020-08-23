@@ -15,3 +15,13 @@ sudo docker stack deploy --compose-file docker-compose.yaml flask_stack
 sudo docker stack services flask_stack
 ```
 
+# Update
+```
+sudo docker stack deploy --compose-file docker-compose.yaml flask_stack
+```
+
+# Remove
+```
+sudo docker stack rm flask_stack
+```
+
